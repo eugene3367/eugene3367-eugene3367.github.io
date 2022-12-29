@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POSCO</title>
+    <!-- 메타포(검색엔진에서 잘 검색되기 위해서) -->
+    <meta name="description" content="포스코 철강산업 전문 업체, 투자자정보, 제품 및 기술소개, 채용정보 안내 홈페이지">
+    <meta name="keywords" content="포스코, 철강">
+    <!--오픈그래프-->
+    <meta property="og:site_name" content="POSCO">
+    <meta property="og:title" content="POSCO">
+    <meta property="og:url" content="https://www.posco.co.kr/">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="포스코 철강산업 전문 업체, 투자자정보, 제품 및 기술소개, 채용정보 안내 홈페이지">
+    <meta property="og:image" content="img/logo.svg">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="400">
+    <!--파비콘(바로가기 아이콘, 스마트폰에서 쓰임)-->
+    <link rel="shortcut icon" type="image/x-icon" href="./img/icon/favi.png">
+    <!-- 각 종 플러그인과 설정 파일 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <!-- 구형 브라우저 html5태그 인식 -->
+    <script src="./js/html5shiv.js"></script>
+    <!-- 구형 브라우저에서 css animation 인식 -->
+    <script src="./js/prefixfree.min.js"></script>
+    <!-- 구형 브라우저에서 미디어쿼리 인식 -->
+    <script src="./js/respond.min.js"></script>
+    <!-- jquery 플러그인 연결 -->
+    <script src="./js/jquery-1.11.1.js"></script>
+
+    <link rel="stylesheet" href="css/reset2.css">
+    <link rel="stylesheet" href="header.css">
+    <style>
+        /* header.css */
+        .hd {
+            position: fixed;
+        }
+
+        /* content */
+        .vs {
+            clear: both;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .vs img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .bread {
+            clear: both;
+            width: 100%;
+            line-height: 60px;
+            border-bottom: 3px solid rgb(129, 175, 219);
+        }
+
+        .bread_fr {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .page {
+            clear: both;
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        .page:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .page_wrap {
+            width: 1200px;
+            margin: 0 auto;
+            padding: 3em;
+        }
+
+        .page_title {
+            padding-top: 1em;
+        }
+
+        .home {
+            color: rgb(0, 0, 0);
+        }
+
+        .page_wrap h3 { padding-top: 2em;}
+        .m1, .m2, .m3 { padding-top: 3em;}
+        .page_wrap p { padding-top: 10px;}
+        .m4 li h5 { padding-top: 20px; font-size: 0.9em;}
+        .m4 { margin-bottom: 50px;}
+
+
+        /* footer.css */
+    </style>
+    <link rel="stylesheet" href="footer.css">
+    <script>
+        $(document).ready(function () {
+            $(".to_top").attr("href", location.href);
+            $(window).scroll(function () {
+                var ht = $(window).height();
+                var tp = $(this).scrollTop();
+                if (tp >= 300) {
+                    $(".to_top").addClass("on");
+                    $(".to_top").attr("href", location.href);
+                } else {
+                    $(".to_top").removeClass("on");
+                    $(".to_top").attr("href", location.href);
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <header class="hd">
+            <div class="hd_wrap">
+                <a href="index.html" class="logo"><img src="img/logo.svg" alt="POSCOlogo"></a>
+                <nav class="tnb">
+                    <a href="login.html">로그인</a>
+                    <a href="join.html">회원가입</a>
+                    <a href="sitemap.html">사이트맵</a></nav>
+                <nav class="gnb">
+                    <ul>
+                        <li class="item1">
+                            <a href="company.html#page1" class="dp1">회사소개</a>
+                            <ul class="sub">
+                                <li><a href="company.html#page1">비전</a></li>
+                                <li><a href="company.html#page2">대표이사 메세지</a></li>
+                                <li><a href="company.html#page3">포스코 CI</a></li>
+                            </ul>
+                        </li>
+                        <li class="item2">
+                            <a href="product.html#page1" class="dp1">제품</a>
+                            <ul class="sub">
+                                <li><a href="product.html#page1">자동차</a></li>
+                                <li><a href="product.html#page2">건설</a></li>
+                                <li><a href="product.html#page3">에너지</a></li>
+                            </ul>
+                        </li>
+                        <li class="item3">
+                            <a href="esg.html#page1" class="dp1">ESG</a>
+                            <ul class="sub">
+                                <li><a href="esg.html#page1">Environment</a></li>
+                                <li><a href="esg.html#page2">Social</a></li>
+                                <li><a href="esg.html#page3">Government</a></li>
+                            </ul>
+                        </li>
+                        <li class="item4">
+                            <a href="ad.html#page1" class="dp1">홍보채널</a>
+                            <ul class="sub">
+                                <li><a href="ad.html#page1">미디어라이브러리</a></li>
+                                <li><a href="ad.html#page2">문화행사</a></li>
+                                <li><a href="ad.html#page3">견학신청</a></li>
+                            </ul>
+                        </li>
+                        <li class="item5">
+                            <a href="custom.html#page1" class="dp1">고객지원</a>
+                            <ul class="sub">
+                                <li><a href="custom.html#page1">공지사항</a></li>
+                                <li><a href="custom.html#page2">FAQ</a></li>
+                                <li><a href="custom.html#page3">오시는길</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="content">
+            <figure class="vs">
+                <img src="img/baner/company.jpg" alt="비주얼">
+            </figure>
+            <div class="bread">
+                <div class="bread_fr">
+                    <a href="index.html" class="home">HOME</a> &gt;
+                    <span class="sel">개인정보처리방침</span>
+                </div>
+            </div>
+            <section class="page">
+                <div class="page_wrap">
+                    <h2 class="page_title">개인정보처리방침</h2>
+                    <h3>개인정보처리방침Ver.3.6</h3>
+                    <div class="m1">
+                        <h4>총 칙</h4>
+                        <p>㈜포스코는 『개인정보보호법』 제30조에 따라 정보주체의 개인정보를 보호하고 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여 다음과 같이 개인정보처리방침을 수립·공개합니다.
+                            ㈜포스코는 개인정보처리방침을 통하여 귀하께서 제공하시는 개인정보가 어떠한 용도와 방식으로 이용되고 있으며 개인정보보호를 위해 어떠한 조치가 취해지고 있는지 알려드립니다.</p>
+                    </div>
+                    <div class="m2">
+                        <h4>개인정보 수집에 대한 동의</h4>
+                        <p>㈜포스코는 귀하께서 포스코 홈페이지(www.posco.co.kr)의 이용약관의 내용에 대해 「동의한다」버튼 또는 「동의하지 않는다」버튼을 클릭할 수 있는 절차를 마련하여, 「동의한다」버튼을 클릭하면 개인정보 수집에 대해 동의한 것으로 간주합니다.
+
+                            ※ 본 서비스(사이트)는 만 14세 미만의 아동에 대한 개인정보를 수집하고 있지 않으며, 홈페이지에 아동에게 유해한 정보를 게시하거나 제공하고 있지 않습니다.</p>
+                    </div>
+                    <div class="m3">
+                        <h4>개인정보의 수집목적 및 이용목적</h4>
+                        <p>포스코 홈페이지는 회원가입 시 서비스 이용을 위해 필요한 최소한의 개인정보만을 수집합니다.
+                            처리하고 있는 개인정보는 다음의 목적 이외의 용도로는 이용되지 않으며, 이용 목적이 변경되는 경우에는 개인정보 보호법 제18조에 따라 별도의 동의를 받는 등 필요한 조치를 이행 할 예정입니다.</p>
+                    </div>
+                    <ul class="m4">
+                        <li>
+                            <h5>회원가입</h5>
+                            <p>귀하가 포스코 홈페이지의 서비스를 이용하기 위해서는 회원가입 시 (희망 ID, 비밀번호, 성명, 핸드폰번호, E-mail 주소, 생년월일, 아이핀DI(중복가입확인정보) )를 필수적으로 입력하셔야 합니다. 그러나, 선택항목(전화번호, 포스코와의 관계 등)은 이를 입력하지 않더라도 서비스 이용에는 제한이 없습니다.
+                                개인정보 항목별 구체적인 수집목적 및 이용목적은 다음과 같습니다.
+                                성명, 아이디, 비밀번호, 생년월일, 아이핀DI(중복가입확인정보) : 회원제 서비스 이용에 따른 본인 식별 절차에 이용
+                                이메일주소, 핸드폰번호, (선택)전화번호 : 고지사항 전달, 불만처리 등을 위한 원활한 의사소통 경로의 확보, 새로운 서비스 및 뉴스, 이벤트 정보 등의 안내
+                                핸드폰번호, (선택)전화번호 : 경품 배송에 대한 정확한 배송지의 확보
+                                (선택)기타 선택항목 : 개인맞춤 서비스를 제공하기 위한 자료</p>
+                        </li>
+                        <li>
+                            <h5>비윤리 신고</h5>
+                            <p>필수항목 : 작성자, 전화번호, E-MAIL, 비밀번호</p>
+                        </li>
+                        <li>
+                            <h5>공정거래 상담 및 신고</h5>
+                            <p>필수항목 : 작성자, E-MAIL, 전화번호, 비밀유지</p>
+                        </li>
+                        <li>
+                            <h5>갑질행위신고</h5>
+                            <p>필수항목 : 작성자, 전화번호, E-MAIL, 비밀번호</p>
+                        </li>
+                        <li>
+                            <h5>직장 괴롭힘·성희롱 신고</h5>
+                            <p>필수항목 : 작성자, 전화번호, E-MAIL, 비밀번호</p>
+                        </li>
+                        <li>
+                            <h5>윤리딜레마 상담</h5>
+                            <p>필수항목 : 작성자, 전화번호, E-MAIL, 비밀번호</p>
+                        </li>
+                        <li>
+                            <h5>Ethics Counseling Center</h5>
+                            <p>필수항목 : 작성자, 전화번호, E-MAIL, 성별, 직원여부, 비밀유지</p>
+                        </li>
+                        <li>
+                            <h5>Reporting Center for Unethical Behavior</h5>
+                            <p>필수항목 : 작성자, 전화번호, E-MAIL, 비밀번호</p>
+                        </li>
+                        <li>
+                            <h5>Q&A</h5>
+                            <p>필수항목 : 작성자, E-MAIL, 국가</p>
+                        </li>
+                    </ul>                    
+                </div>
+            </section>
+        </div>
+        <footer class="ft">
+            <div class="ft_wrap">
+                <div class="ft_logo"><img src="img/logo.svg" alt="하단로고"></div>
+                <div class="mid_box">
+                    <nav class="fnb">
+                        <a href="member01.html" class="dpc">개인정보처리방침</a>
+                        <a href="member02.html" class="dpc">이용약관</a>
+                        <a href="member03.html" class="dpc">이메일무단수집거부</a>
+                    </nav>
+                    <p class="addr">
+                        POSCO | 대표이사: 김학동 | 사업자등록번호: 506-81-00017<br>
+                        (우)37859 경상북도 포항시 남구 동해안로 6261(포항시 남구 괴동동1) | 대표전화: 054-220-0114, 02-3457-0114</p>
+                    <p class="copyright">(c) POSCO, All rights reserved.</p>
+                </div>
+                <div class="sel_box">
+                    <select name="sel" id="sel" class="sel" onchange="sel_link(this)">
+                        <option value="">패밀리사이트</option>
+                        <option value="https://www.posco-inc.com:4453/poscoinc/kor/s91e00000000.jsp">포스코홀딩스</option>
+                        <option value="https://www.poscosteeleon.com/kr/main.do">포스코스틸리온</option>
+                    </select>
+                </div>
+                <script>
+                    function sel_link(sel) {
+                        location.href = sel.value;
+                    }
+                </script>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

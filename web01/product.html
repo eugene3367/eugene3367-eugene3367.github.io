@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POSCO</title>
+    <!-- 메타포(검색엔진에서 잘 검색되기 위해서) -->
+    <meta name="description" content="포스코 철강산업 전문 업체, 투자자정보, 제품 및 기술소개, 채용정보 안내 홈페이지">
+    <meta name="keywords" content="포스코, 철강">
+    <!--오픈그래프-->
+    <meta property="og:site_name" content="POSCO">
+    <meta property="og:title" content="POSCO">
+    <meta property="og:url" content="https://www.posco.co.kr/">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="포스코 철강산업 전문 업체, 투자자정보, 제품 및 기술소개, 채용정보 안내 홈페이지">
+    <meta property="og:image" content="img/logo.svg">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="400">
+    <!--파비콘(바로가기 아이콘, 스마트폰에서 쓰임)-->
+    <link rel="shortcut icon" type="image/x-icon" href="./img/icon/favi.png">
+    <!-- 각 종 플러그인과 설정 파일 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <!-- 구형 브라우저 html5태그 인식 -->
+    <script src="./js/html5shiv.js"></script>
+    <!-- 구형 브라우저에서 css animation 인식 -->
+    <script src="./js/prefixfree.min.js"></script>
+    <!-- 구형 브라우저에서 미디어쿼리 인식 -->
+    <script src="./js/respond.min.js"></script>
+    <!-- jquery 플러그인 연결 -->
+    <script src="./js/jquery-1.11.1.js"></script>
+
+    <link rel="stylesheet" href="css/reset2.css">
+    <link rel="stylesheet" href="header.css">
+    <style>
+        /* header.css */
+        .hd {
+            position: fixed;
+        }
+
+        /* content */
+        .vs {
+            clear: both;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .vs img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .bread {
+            clear: both;
+            width: 100%;
+            line-height: 60px;
+            border-bottom: 3px solid rgb(129, 175, 219);
+        }
+
+        .bread_fr {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .page {
+            clear: both;
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        .page:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .page_wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content {
+            display: none;
+        }
+
+        .content:target {
+            display: block;
+        }
+
+        .page_wrap {
+            padding: 2em;
+        }
+
+        .page_title {
+            padding-top: 1em;
+        }
+
+        .home {
+            color: rgb(0, 0, 0);
+        }
+
+        .car {
+            padding-top: 70px;
+        }
+
+        .car img {
+            float: left;
+        }
+
+        .car_com {
+            float: right;
+            width: 800px;
+            white-space: pre-wrap;
+        }
+
+        .car_com h3 {
+            font-size: 2.5em;
+        }
+
+        .car_vid {
+            clear: both;
+            display: block;
+            width: 330px;
+            height: 195px;
+            margin-top: 280px;
+            background-color: rgb(72, 72, 192);
+            border-radius: 10px;
+        }
+
+        .car iframe {
+            width: 100%;
+            height: auto;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .car_vid p {
+            color: aliceblue;
+            text-align: center;
+            line-height: 35px;
+        }
+
+        .str {
+            padding-top: 70px;
+        }
+
+        .str img {
+            float: left;
+        }
+
+        .str_com {
+            float: right;
+            width: 800px;
+            white-space: pre-wrap;
+        }
+
+        .str_com h3 {
+            font-size: 2.5em;
+        }
+
+        .ene {
+            padding-top: 70px;
+        }
+
+        .ene img {
+            float: left;
+        }
+
+        .ene_com {
+            float: right;
+            width: 800px;
+            white-space: pre-wrap;
+        }
+
+        .ene_com h3 {
+            font-size: 2.5em;
+        }
+
+        .ene_vid {
+            clear: both;
+            display: block;
+            width: 330px;
+            height: 195px;
+            margin-top: 280px;
+            background-color: rgb(72, 72, 192);
+            border-radius: 10px;
+        }
+
+        .ene iframe {
+            width: 100%;
+            height: auto;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .ene_vid p {
+            color: aliceblue;
+            text-align: center;
+            line-height: 35px;
+        }
+
+        .to_top {
+            position: fixed;
+            bottom: 80px;
+            right: 80px;
+            z-index: 999;
+            background-color: rgb(211, 153, 44);
+            color: black;
+            display: block;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            font-size: 20px;
+            border-radius: 32px;
+            visibility: hidden;
+            transition-duration: 0.8s;
+        }
+
+        .to_top:hover {
+            background-color: aqua;
+        }
+
+        .to_top.on {
+            visibility: visible;
+        }
+
+        /* footer.css */
+    </style>
+    <link rel="stylesheet" href="footer.css">
+    <script>
+        $(document), ready(function () {
+            $(window).scroll(function () {
+                var ht = $(window).height();
+                var tp = $(this).scrollTop();
+                if (tp >= 300) {
+                    $(".to_top").addClass("on");
+                    $(".to_top").attr("href", location.href);
+                } else {
+                    $(".to_top").removeClass("on");
+                    $(".to_top").attr("href", location.href);
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <header class="hd">
+            <div class="hd_wrap">
+                <a href="index.html" class="logo"><img src="img/logo.svg" alt="POSCOlogo"></a>
+                <nav class="tnb">
+                    <a href="login.html">로그인</a>
+                    <a href="join.html">회원가입</a>
+                    <a href="sitemap.html">사이트맵</a></nav>
+                <nav class="gnb">
+                    <ul>
+                        <li class="item1">
+                            <a href="company.html#page1" class="dp1">회사소개</a>
+                            <ul class="sub">
+                                <li><a href="company.html#page1">비전</a></li>
+                                <li><a href="company.html#page2">대표이사 메세지</a></li>
+                                <li><a href="company.html#page3">포스코 CI</a></li>
+                            </ul>
+                        </li>
+                        <li class="item2">
+                            <a href="product.html#page1" class="dp1">제품</a>
+                            <ul class="sub">
+                                <li><a href="product.html#page1">자동차</a></li>
+                                <li><a href="product.html#page2">건설</a></li>
+                                <li><a href="product.html#page3">에너지</a></li>
+                            </ul>
+                        </li>
+                        <li class="item3">
+                            <a href="esg.html#page1" class="dp1">ESG</a>
+                            <ul class="sub">
+                                <li><a href="esg.html#page1">Environment</a></li>
+                                <li><a href="esg.html#page2">Social</a></li>
+                                <li><a href="esg.html#page3">Government</a></li>
+                            </ul>
+                        </li>
+                        <li class="item4">
+                            <a href="ad.html#page1" class="dp1">홍보채널</a>
+                            <ul class="sub">
+                                <li><a href="ad.html#page1">미디어라이브러리</a></li>
+                                <li><a href="ad.html#page2">문화행사</a></li>
+                                <li><a href="ad.html#page3">견학신청</a></li>
+                            </ul>
+                        </li>
+                        <li class="item5">
+                            <a href="custom.html#page1" class="dp1">고객지원</a>
+                            <ul class="sub">
+                                <li><a href="custom.html#page1">공지사항</a></li>
+                                <li><a href="custom.html#page2">FAQ</a></li>
+                                <li><a href="custom.html#page3">오시는길</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="content" id="page1">
+            <figure class="vs">
+                <img src="img/baner/product_1.jpg" alt="비주얼">
+            </figure>
+            <div class="bread">
+                <div class="bread_fr">
+                    <a href="index.html" class="home">HOME</a> &gt;
+                    <select name="sel1" id="sel1" class="sel">
+                        <option>제품</option>
+                        <option value="company.html#page1">회사소개</option>
+                        <option value="esg.html#page1">EGS</option>
+                        <option value="ad.html#page1">홍보채널</option>
+                        <option value="custom.html#page1">고객지원</option>
+                    </select> &gt;
+                    <select name="sel2" id="sel2" class="sel">
+                        <option>자동차</option>
+                        <option value="product.html#page2">건설</option>
+                        <option value="product.html#page3">에너지</option>
+                    </select>
+                </div>
+            </div>
+            <section class="page">
+                <div class="page_wrap">
+                    <h2 class="page_title">자동차</h2>
+                    <div class="car">
+                        <img src="img/content/product/1.jpg" alt="자동차">
+                        <div class="car_com">
+                            <h3>차체용</h3>
+                            <p>차체는 차량 사고 시 충격을 흡수 및 분산하여 탑승자의 안전을 지켜주는 역할을 합니다. 또한 전기차의 경우 배터리 파손을 방지하는 역할도 합니다. 차체는 외판과내판으로 구분되며, 부위에 따라 성형성, 도장성, 선영성, 가공성, 용접성, 내식성 등 다양한 성능이 요구됩니다. 포스코는 차체 부위별로 요구사항을 만족시키는 냉연 제품, 용융도금 제품 등을 생산합니다.</p>
+                        </div>
+                        <div class="car_vid">
+                            <iframe width="708" height="398" src="https://www.youtube.com/embed/g4Cisf8mGVo"
+                                title="[POSCO Product] POSCO Automotive steel (stop motion animation)" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                            <p>자동차강판</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="content" id="page2">
+            <figure class="vs">
+                <img src="img/baner/product_2.jpg" alt="비주얼">
+            </figure>
+            <div class="bread">
+                <div class="bread_fr">
+                    <a href="index.html" class="home">HOME</a> &gt;
+                    <select name="sel3" id="sel3" class="sel">
+                        <option>제품</option>
+                        <option value="company.html#page1">회사소개</option>
+                        <option value="esg.html#page1">EGS</option>
+                        <option value="ad.html#page1">홍보채널</option>
+                        <option value="custom.html#page1">고객지원</option>
+                    </select> &gt;
+                    <select name="sel4" id="sel4" class="sel">
+                        <option>건설</option>
+                        <option value="product.html#page1">자동차</option>
+                        <option value="product.html#page3">에너지</option>
+                    </select>
+                </div>
+            </div>
+            <section class="page">
+                <div class="page_wrap">
+                    <h2 class="page_title">건설</h2>
+                    <div class="str">
+                        <img src="img/content/product/2.jpg" alt="건설">
+                        <div class="str_com">
+                            <h3>건축 구조용</h3>
+                            <p>더 높이, 더 안전한 건물을 짓기 위해서 여러 형태의 구조시스템이 적용되고, 구조시스템이 더욱 효율적인 성능을 발휘하기 위해서는 강하고, 지진에 잘 견디는 강재를 사용하여 H형강, 강관 등이 제작되어 건물의 주요 구조물에 적용됩니다. 또한, 건물은 소성변형이 허용되는 변형능력, 붕괴 메커니즘의 재현성 및 용접성을 확보한 내진설계를 합니다. 포스코의 건축 구조물용 강재는 내진설계 규정을 만족하는 항복점(Yield Point)과 항복비(Yield Ratio)를 가지며, 후판 및 열연 형태로 공급됩니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="content" id="page3">
+            <figure class="vs">
+                <img src="img/baner/product_3.jpg" alt="비주얼">
+            </figure>
+            <div class="bread">
+                <div class="bread_fr">
+                    <a href="index.html" class="home">HOME</a> &gt;
+                    <select name="sel5" id="sel5" class="sel">
+                        <option>제품</option>
+                        <option value="product.html#page1">회사소개</option>
+                        <option value="esg.html#page1">EGS</option>
+                        <option value="ad.html#page1">홍보채널</option>
+                        <option value="custom.html#page1">고객지원</option>
+                    </select> &gt;
+                    <select name="sel6" id="sel6" class="sel">
+                        <option>에너지</option>
+                        <option value="company.html#page1">자동차</option>
+                        <option value="company.html#page2">건설</option>
+                    </select>
+                </div>
+            </div>
+            <section class="page">
+                <div class="page_wrap">
+                    <h2 class="page_title">에너지</h2>
+                    <div class="ene">
+                        <img src="img/content/product/3.jpg" alt="에너지">
+                        <div class="ene_com">
+                            <h3>플랜트 및 저장용</h3>
+                            <p>석유 또는 가스를 채굴, 정제, 저장하는 시설인 해양 플랜트, 육상 플랜트, 고압의 저장용기, 보일러, 열 교환기 발전 설비 반응로 등을 제작하는 용도입니다. 열연, 후판, 스테인리스 등 다양한 철강제품이 사용됩니다.</p>
+                        </div>
+                        <div class="ene_vid">
+                            <iframe width="708" height="398" src="https://www.youtube.com/embed/hFvrgQ_CMdA"
+                                title="포스코 9% 니켈강이 더 안전하고 경제적인 이유" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                            <p>9%니켈강</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <script>
+            var sel = document.getElementsByClassName("sel");
+            for (var i = 0; i < sel.length; i++) {
+                sel[i].addEventListener("change", function () {
+                    location.href = this.value;
+                });
+            }
+        </script>
+        <footer class="ft">
+            <div class="ft_wrap">
+                <div class="ft_logo"><img src="img/logo.svg" alt="하단로고"></div>
+                <div class="mid_box">
+                    <nav class="fnb">
+                        <a href="member01.html" class="dpc">개인정보처리방침</a>
+                        <a href="member02.html" class="dpc">이용약관</a>
+                        <a href="member03.html" class="dpc">이메일무단수집거부</a>
+                    </nav>
+                    <p class="addr">
+                        POSCO | 대표이사: 김학동 | 사업자등록번호: 506-81-00017<br>
+                        (우)37859 경상북도 포항시 남구 동해안로 6261(포항시 남구 괴동동1) | 대표전화: 054-220-0114, 02-3457-0114</p>
+                    <p class="copyright">(c) POSCO, All rights reserved.</p>
+                </div>
+                <div class="sel_box">
+                    <select name="sel" id="sel" class="sel" onchange="sel_link(this)">
+                        <option value="">패밀리사이트</option>
+                        <option value="https://www.posco-inc.com:4453/poscoinc/kor/s91e00000000.jsp">포스코홀딩스</option>
+                        <option value="https://www.poscosteeleon.com/kr/main.do">포스코스틸리온</option>
+                    </select>
+                </div>
+                <script>
+                    function sel_link(sel) {
+                        location.href = sel.value;
+                    }
+                </script>
+            </div>
+        </footer>
+    </div>
+    <a href="" class="to_top">↑</a>
+    <!--.to_top.on-->
+</body>
+
+</html>
