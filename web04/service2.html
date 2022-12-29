@@ -1,0 +1,242 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>EA app</title>
+    <!-- 헤드 부분 인클루드 -->
+    
+
+
+
+
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<link rel="stylesheet" href="resources/css/normalize.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.3/motion-ui.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation-prototype.min.css">
+<link href='https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' rel='stylesheet' type='text/css'>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.3/motion-ui.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$(document).foundation();
+	});
+</script>
+<style>
+ul { list-style:none; }
+
+#gnb > ul > li[role="menuitem"] { height:38px; }
+#gnb > ul > li.menu-text[role="menuitem"] { padding-top:0px; padding-bottom:0px; }
+
+.h1 { padding-top:0.9rem; padding-bottom:0.3rem; }
+.container { clear:both; width:1200px; margin:0 auto; }
+.container::after { content:""; display:block; width:100%; clear:both; }
+
+#table1 th { border-bottom:1px solid #fff; }
+
+.grid-container { padding-bottom: 80px;}
+
+.footer-nav {	background-color:#2d2d2d; height:141px; box-sizing:border-box; }
+.footer-nav > article { clear:both; width:1200px; margin:0px auto; height:80px; }
+.footer-nav > article > div { float:left; }
+.footer-nav-left { color:#fff; width:15%; line-height:80px; }
+.footer-logo { width: 75px; margin: 25px; }
+.footer-nav-center {
+	width:50%;
+}
+.footer-nav-right {
+	width:25%; 
+}
+#footer .footer-nav-left .footer-copyright {
+	line-height:80px;
+}
+
+#footer > article > div > ul > li.footer-nav-item { 
+	float:left; width:auto; padding:1.8rem; padding-top: 3rem; 
+	min-width:40px;
+}
+.footer-nav-item a { color: white;}
+
+#footer > article > div.footer-nav-right > ul > li.footer-nav-item {
+	width:25%; height:25%;
+}
+
+</style>
+
+    <style>
+    .service-baner { height: auto; width: 1170px; position: absolute; }
+    .service-p { position: relative; padding-left: 50px; padding-top: 20px;}
+    .service-h2 { position: relative; padding-left: 50px; margin-top: -15px;}
+    .service-h4 { position: relative; width: 800px; padding-left: 50px; margin-top: -7px;}
+    .tileLogo { width: 300px; }
+    .tileCheckmark { width: 20px;}
+    </style>
+
+<!-- Hotjar Tracking Code for my site -->
+<script>
+	(function(h,o,t,j,a,r){
+		h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+		h._hjSettings={hjid:3286241,hjsv:6};
+		a=o.getElementsByTagName('head')[0];
+		r=o.createElement('script');r.async=1;
+		r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+		a.appendChild(r);
+	})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+  
+</head>
+<body>
+	<header id="header">
+		<!-- 헤더 부분 인클루드 -->
+	 	
+
+
+
+
+
+
+<!-- 헤더 내용 기술 -->
+<nav class="top-bar">
+	<div class="top-bar-left" id="gnb">
+		 <!-- <button class="menu-icon" type="button" data-toggle="responsive-menu"></button> -->
+	  <ul class="dropdown menu" data-dropdown-menu>
+		<li class="menu-text"><a href="index.html" class="logo" style="padding-top: 5px;"><img alt="" src="data/logo.svg"></a></li>
+		<li class="has-submenu">
+			 <a href="#">Game</a>
+			 <ul class="submenu menu vertical" data-submenu>
+				 <li><a href="game.html">최신 게임</a></li>
+				 <li><a href="game2.html">출시 예정</a></li>
+				 <li><a href="game3.html">게임 목록</a></li>
+			 </ul>
+		 </li>
+		<li class="has-submenu">
+			 <a href="#">Service</a>
+			 <ul class="submenu menu vertical" data-submenu>
+				 <li><a href="service.html">EA Play</a></li>
+				 <li><a href="service2.html">EA app</a></li>
+			 </ul>
+		 </li>
+		<li class="has-submenu">
+			 <a href="#">Company</a>
+			 <ul class="submenu menu vertical" data-submenu>
+				 <li><a href="company.html">회사 소개</a></li>
+				 <li><a href="company2.html">EA 파트너</a></li>
+			 </ul>
+		 </li>
+		<li class="has-submenu">
+			 <a href="#">Community</a>
+			 <ul class="submenu menu vertical" data-submenu>
+				 <li><a href="notice.html">공지사항</a></li>
+                 <li><a href="data.html">자료실</a></li>
+                 <li><a href="qna.html">질문 및 답변</a></li>
+				 <li><a href="free.html">자유게시판</a></li>
+			 </ul>
+		 </li>
+	  </ul>
+	</div>
+			 
+	  <div class="top-bar-right">
+		<ul class="menu">
+		 
+		   <li><a href="login.html">로그인</a></li>
+		   <li><a href="agree.html">회원가입</a></li>
+		 
+		   
+		   
+		</ul>
+	  </div>
+   </nav>
+	 <!-- End Top Bar -->
+ 
+	 <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+	   <ul class="orbit-container">
+		 <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
+		 <button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
+		 <li class="orbit-slide is-active">
+		   <img src="data/m1.jpg" alt="더미이미지">
+		 </li>
+		 <li class="orbit-slide">
+		   <img src="data/m2.jpg" alt="더미이미지">
+		 </li>
+	   </ul>
+	 </div>
+ 
+ </header>
+	<hr>
+	<article class="grid-container">            
+	    <div class="">
+	    	<p class="lead">EA app</p>
+	    </div>
+	    
+	    <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+	    	<ul class="orbit-container">
+	        	<li class="orbit-slide is-active">
+		          	<img class="service-baner" src="data/service2.png" alt="더미이미지">
+		          	<p class="service-p">
+		          		<h1 class="service-h2">Windows용 EA app</h1>
+		          		<h3 class="service-h4">EA의 차세대 PC 게이밍 플랫폼</h3>
+		          		<a class="button">EA app 다운로드</a>
+		          	</p>			
+	        	</li>
+	      	</ul>
+	    </div>
+	</article>
+    <footer id="footer" class="footer-nav row expanded collapse">
+    	<!-- 푸터 부분 인클루드 -->
+    	
+
+
+
+
+<!-- 푸터 내용 기술 -->
+<article class="ft_wrap">
+	<div class="footer-nav-left">
+	  <p class="footer-copyright"><img class="footer-logo" alt="" src="data/logo.png"></p>
+	</div>
+	<div class="footer-nav-center">
+	  <ul class="footer-nav-menu">
+	    <li class="footer-nav-item">
+	      <a href="#">커리어</a>
+	    </li>
+	    <li class="footer-nav-item">
+	      <a href="#">경영진</a>
+	    </li>
+	    <li class="footer-nav-item">
+	      <a href="#">영향 보고서</a>
+	    </li>
+	   	<li class="footer-nav-item">
+	      <a href="#">EA의 약속</a>
+	    </li>
+	  </ul>
+	</div>
+	<div class="footer-nav-right">
+	  <ul class="footer-nav-menu-icons">
+	    <li class="footer-nav-item">
+	      <a href="#"><img class="footer-social-icon" src="data/email-icon.svg" alt=""></a>
+	    </li>
+	    <li class="footer-nav-item">
+	      <a href="#"><img class="footer-social-icon" src="data/facebook-icon.svg" alt=""></a>
+	    </li>
+	    <li class="footer-nav-item">
+	      <a href="#"><img class="footer-social-icon" src="data/twitter-icon.svg" alt=""></a>
+	    </li>
+	    <li class="footer-nav-item">
+	      <a href="#"><img class="footer-social-icon" src="data/youtube-icon.svg" alt=""></a>
+	    </li>
+	  </ul>
+	</div>
+</article>
+</footer>  
+</body>
+</html>
