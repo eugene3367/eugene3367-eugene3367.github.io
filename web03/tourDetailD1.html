@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>장소 상세보기</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<style>
+body, html { font-family: 'Noto Sans KR', sans-serif; }
+.table { min-width:960px; }
+#nav-group { border-bottom:1px solid #ddd; }
+#gnb .navbar-link::after { content:""; display:none; }
+#sidebar .navbar { display:block; width:100%; background-color:transparent; }
+#sidebar .navbar-item { float:none; clear:both; display:block; width:100%; }
+.navbar-item.has-dropdown.is-hoverable { min-width:110px; }
+.navbar-item.has-dropdown.is-hoverable a { font-weight:800; }
+.footer { display: block; width: 1344px; margin: 0 auto;}
+.ft_logo { float:left;}
+.ft_content { width: 900px; }
+.select { margin-left: 10px; }
+.mid_box { margin-top: 20px;}
+.dpc { padding-right:34px;}
+.addr { padding-top:20px;}
+.copyright { width:800px;}
+</style>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://s1.daumcdn.net/svc/attach/U03/cssjs/mapapidoc/1421136453605/service.min.css">
+	<style>
+	body { background:white; }
+	</style>	
+	<script type="text/javascript" src="https://dmaps.daum.net/map_js_init/v3.js"></script>
+	<script type="text/javascript" src="https://s1.daumcdn.net/svc/original/U03/cssjs/jquery/jquery-1.11.0.js"></script>	
+	<script type="text/javascript" src="https://s1.daumcdn.net/svc/original/U0301/cssjs/JSON-js/fc535e9cc8/json2.min.js"></script>
+</head>
+<body class="web guide" data-page_section="web" data-page_type="guide" data-title="Daum 지도 Web API 가이드">
+<div id="nav-group">
+	<div class="container">
+		<nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+              <a class="navbar-item" id="logo2" href="index.html">
+              <img alt="상단로고" src="./data/logo.png">
+              </a>
+          
+              <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+            </div>		  
+            
+            <div id="navbarBasicExample" class="navbar-menu">
+              <div class="navbar-start" id="gnb">
+              
+              <div class="navbar-item has-dropdown is-hoverable">
+                  <a href="tourCateListA.html" class="navbar-link">
+                  관광명소</a>
+                  <div class="navbar-dropdown cate" id="cate01">
+                       <a href="tourDetailA1.html" class="navbar-item">용흥사계곡</a>
+                       <a href="tourDetailA2.html" class="navbar-item">관방제림</a>
+                       <a href="tourDetailA3.html" class="navbar-item">가마골용소</a>					          
+                  </div>
+              </div>
+              <div class="navbar-item has-dropdown is-hoverable">
+                  <a href="tourCateListB.html" class="navbar-link cate">
+                  문화예술</a>
+                  <div class="navbar-dropdown cate" id="cate02">
+                       <a href="tourDetailB1.html" class="navbar-item">고하 송진우</a>
+                       <a href="tourDetailB2.html" class="navbar-item">하서 김인후</a>
+                       <a href="tourDetailB3.html" class="navbar-item">서하당 김성원</a>          
+                  </div>
+              </div>
+              <div class="navbar-item has-dropdown is-hoverable">
+                  <a href="tourCateListC.html" class="navbar-link cate">
+                  인문학기행</a>
+                  <div class="navbar-dropdown cate" id="cate03">
+                       <a href="tourDetailC1.html" class="navbar-item">담양별빛달빛야행</a>
+                       <a href="tourDetailC2.html" class="navbar-item">담양에서 일주일여행하기</a>					   
+                  </div>
+              </div>
+              <div  class="navbar-item has-dropdown is-hoverable">
+                  <a href="tourCateListD.html" class="navbar-link cate">
+                  담양의 축제</a>
+                  <div class="navbar-dropdown cate" id="cate04">
+                       <a href="tourDetailD1.html" class="navbar-item">용면추월산 벚꽃축제</a>
+                       <a href="tourDetailD2.html" class="navbar-item">담양대나무축제</a>
+                       <a href="tourDetailD3.html" class="navbar-item">고서포도축제</a>						         
+                  </div>
+              </div>
+              <div  class="navbar-item has-dropdown is-hoverable">
+                  <a href="tourCateListE.html" class="navbar-link cate">
+                  담양의 음식</a>
+                  <div class="navbar-dropdown cate" id="cate05">
+                       <a href="tourDetailE1.html" class="navbar-item">한우 떡갈비</a>
+                       <a href="tourDetailE2.html" class="navbar-item">대통밥</a>
+                       <a href="tourDetailE3.html" class="navbar-item">담양국수</a>							          
+                  </div>
+              </div>			
+              <div class="navbar-item has-dropdown is-hoverable">
+                  <a href="tourCateListF.html" class="navbar-link cate">
+                  담양의 숙소</a>
+                  <div class="navbar-dropdown cate" id="cate06">
+                       <a href="tourDetailF1.html" class="navbar-item">힐링민박</a>
+                       <a href="tourDetailF2.html" class="navbar-item">휴가림</a>
+                       <a href="tourDetailF3.html" class="navbar-item">행복나드리 민박</a>          
+                  </div>
+              </div> 			
+              <div class="navbar-item has-dropdown is-hoverable single">
+                  <a class="navbar-link">고객센터</a>
+                  <div class="navbar-dropdown single">
+                       <a class="navbar-item" href="notice.html">공지사항</a>
+                       <a class="navbar-item" href="QNA.html">묻고 답하기</a>
+                       <a class="navbar-item" href="impress.html">이용후기</a>				        
+                  </div>
+              </div>		  
+            <div class="navbar-end" id="tnb">
+              <div class="navbar-item">		    	
+                    <div class="buttons">
+                      <a class="button is-primary" href="signUp.html">
+                        <strong>회원가입</strong>
+                      </a>
+                      <a class="button is-focused" href="login.html">
+                           로그인
+                      </a>
+                    </div>		  		
+              </div>
+            </div>
+          </div>
+          </nav>
+		<script>
+		$(document).ready(function(){
+			$.ajax({
+				url:"/pro03/MenuLoadCtrl.do",
+				type:"POST",
+				enctype:"UTF-8",
+				datatype:"json",
+				processData:false,
+				contentType:false,
+				cache:false,
+				success:function(data){
+					$(".navber-dropdown.cate").empty();
+					var trans = $.parseJSON(data);
+					$.each(trans, function(key, value){
+						if(key=="data"){
+							for(var i=0;i<value.length;i++){
+								if(value[i].cate=="A"){
+									$("#cate01").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
+								} else if(value[i].cate=="B"){
+									$("#cate02").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
+								} else if(value[i].cate=="C"){
+									$("#cate03").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
+								} else if(value[i].cate=="D"){
+									$("#cate04").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
+								} else if(value[i].cate=="E"){
+									$("#cate05").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
+								} else if(value[i].cate=="F"){
+									$("#cate06").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
+								} 
+							}
+						}
+					})
+				}
+			});
+		})
+		</script>
+	</div>
+</div>	
+<nav class="breadcrumb" aria-label="breadcrumbs" style="border-bottom:2px solid #ddd; padding-bottom:8px; min-height:48px; line-height:48px;">
+	<ul style="float:right;">
+		<li><a href="index.html">Home</a></li>
+		<li><a href="tourCateListD.html"><span>담양의 축제</span></a>
+		</li><li class="is-active"><a href="*">용면추월산벚꽃축제</a></li>
+	</ul>
+</nav>
+<section class="section">
+	<div class="container">
+      <h1 class="title">용면추월산벚꽃축제(4월) 상세보기</h1>
+     		<div id="con">
+     			<table class="table">
+     				<tbody>					
+							<tr>
+								<td>
+									<img src="data/벚꽃축제.jpg" class="lazy" onerror="this.style.display='none'" alt="배너" />
+									<!-- onerror="this.style.display='none'"  -->
+								</td>
+							</tr>
+					</tbody>
+				</table>
+    		</div>
+			<table class="table">
+   				<tbody>
+    				<tr>
+      					<th style="min-width:180px;">번호</th>
+						<td>14</td>
+					</tr>
+					<tr>
+	  					<th>분류</th>
+	  					<td><span>담양의 축제</span></td>
+					</tr>
+					<tr>
+						<th>장소 번호</th>
+						<td><p>D0014</p>
+						<input type="hidden" name="tourno" id="tourno" value="D0014" />
+						</td>
+					</tr>
+					<tr> 
+						<th>장소명</th>
+						<td>
+						용면추월산벚꽃축제(4월)
+						</td>	
+					</tr>
+					<tr>
+						<th>장소 주요 설명</th>
+						<td><p>담양의 대표적 관광지인 추월산 벚꽃의 자연경관을 배경으로 4월에 농·특산물 홍보 및 마케팅과 연계, 관광객과 함께하는 축제로 봄의 향기를 듬뿍 느낄 수 있다.(격년제)</p></td>
+					</tr>
+					<tr>
+						<th>장소 상세 설명</th>
+						<td><p>- 장소 : 용면 추월산 광장 일원
+- 문의 : 061)380-3877~8</p></td>
+					</tr>
+				    <tr>
+				    	<th>주소</th>
+				    	<td>
+				    		<input type="hidden" name="addr" id="addr" value="" />
+				    		<input type="hidden" name="place" id="place" value="용면추월산벚꽃축제(4월)" />
+				    	</td>
+				    </tr>
+				</tbody>
+			</table>
+		<div style="clear:both; margin-bottom:20px; padding-bottom:20px; ">
+			<div id="map" style="margin-left:120px;	margin-top:50px; width:800px;height:600px; background:white; "></div>
+			<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+			<!-- https://developers.kakao.com/ 회원가입 후 -> 내 애플리케이션 -> 애플리케이션 추가 -> 추가된 해당 앱을 클릭하면 발급받은  API키를 확인할 수 있음  -->			
+			<script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=34df602b447b7c5d3ff986f4e632cd38&​libraries=services"></script>
+			<script>
+			var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+			    mapOption = { //128.433182, 34.8544227
+			        center: new kakao.maps.LatLng(35.3408869, 126.8890327), // 지도의 중심좌표
+			        level: 7 // 지도의 확대 레벨
+			    };  
+			
+			// 지도를 생성합니다    
+			var map = new kakao.maps.Map(mapContainer, mapOption); 
+			
+			// 주소-좌표 변환 객체를 생성합니다
+			var geocoder = new kakao.maps.services.Geocoder();
+			
+			// 주소로 좌표를 검색합니다
+			geocoder.addressSearch($("#addr").val(), function(result, status) {
+			
+			    // 정상적으로 검색이 완료됐으면 
+			     if (status === kakao.maps.services.Status.OK) {
+			
+			        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+			        // 결과값으로 받은 위치를 마커로 표시합니다
+			        var marker = new kakao.maps.Marker({
+			            map: map,
+			            position: coords
+			        });
+					
+			        // 인포윈도우로 장소에 대한 설명을 표시합니다
+			        var infowindow = new kakao.maps.InfoWindow({
+			            content: '<div style="width:150px;text-align:center;padding:6px 0;">'+$('#place').val()+'</div>'
+			        });
+			        infowindow.open(map, marker);
+			
+			        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+			        map.setCenter(coords);
+			    } 
+			});    
+			</script>
+		</div>
+		<div class="buttons">
+			<a href="tourCateListD.html" class="button is-focused">목록</a>				
+		</div>
+	</div>
+</section>
+
+<footer class="footer">
+	<div class="content has-text-centered">
+		<div class="ft_logo"><img src="./data/footer_logo.gif" alt="하단로고"></div>
+		<div class="ft_content">
+			<div class="select">
+				<select name="sel" id="sel" class="sel" onchange="sel_link(this)">
+					<option value="">부서별안내</option>
+					<option value="">기획예산실</option>
+					<option value="">행정과</option>
+				</select>
+			</div>
+			<div class="select">	
+				<select name="sel" id="sel" class="sel" onchange="sel_link(this)">
+					<option value="">읍면 홈페이지</option>
+					<option value="">담양읍</option>
+					<option value="">봉산면</option>
+				</select>
+			</div>
+			<div class="select">	
+				<select name="sel" id="sel" class="sel" onchange="sel_link(this)">
+					<option value="">관련사이트</option>
+					<option value="">담양군의회</option>
+					<option value="">문화관광</option>
+				</select>
+			</div>
+			<div class="select">	
+				<select name="sel" id="sel" class="sel" onchange="sel_link(this)">
+					<option value="">유관기관</option>
+					<option value="">담양경찰서</option>            
+				</select>
+			</div>  
+			<div class="mid_box">
+				<nav class="fnb">
+				<a href="" class="dpc">저작권보호정책</a>
+				<a href="" class="dpc">개인정보처리방침</a>
+				<a href="" class="dpc">이메일무단수집거부</a>
+				</nav>
+				<p class="addr">(57339)전라남도 담양군 담양읍 추성로 1371 / 대표전화 061-380-3114</p>
+				<p class="copyright">Copyright by Damyang-Gun. All Right Reserved.</p>
+			</div>   
+		</div>
+	</div>
+	<script>
+	function sel_link(sel) {
+		location.href = sel.value;
+	}
+	</script>
+</footer>
+</body>
+</html>

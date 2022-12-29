@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>장소 상세보기</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<style>
+body, html { font-family: 'Noto Sans KR', sans-serif; }
+.table { min-width:960px; }
+#nav-group { border-bottom:1px solid #ddd; }
+#gnb .navbar-link::after { content:""; display:none; }
+#sidebar .navbar { display:block; width:100%; background-color:transparent; }
+#sidebar .navbar-item { float:none; clear:both; display:block; width:100%; }
+.navbar-item.has-dropdown.is-hoverable { min-width:110px; }
+.navbar-item.has-dropdown.is-hoverable a { font-weight:800; }
+.footer { display: block; width: 1344px; margin: 0 auto;}
+.ft_logo { float:left;}
+.ft_content { width: 900px; }
+.select { margin-left: 10px; }
+.mid_box { margin-top: 20px;}
+.dpc { padding-right:34px;}
+.addr { padding-top:20px;}
+.copyright { width:800px;}
+</style>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+<div id="nav-group">
+	<div class="container">
+		<nav class="navbar" role="navigation" aria-label="main navigation">
+			<div class="navbar-brand">
+			  <a class="navbar-item" id="logo2" href="index.html">
+			  <img alt="상단로고" src="./data/logo.png">
+			  </a>
+		  
+			  <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+				<span aria-hidden="true"></span>
+				<span aria-hidden="true"></span>
+				<span aria-hidden="true"></span>
+			  </a>
+			</div>		  
+			
+			<div id="navbarBasicExample" class="navbar-menu">
+			  <div class="navbar-start" id="gnb">
+			  
+			  <div class="navbar-item has-dropdown is-hoverable">
+				  <a href="tourCateListA.html" class="navbar-link">
+				  관광명소</a>
+				  <div class="navbar-dropdown cate" id="cate01">
+					   <a href="tourDetailA1.html" class="navbar-item">용흥사계곡</a>
+					   <a href="tourDetailA2.html" class="navbar-item">관방제림</a>
+					   <a href="tourDetailA3.html" class="navbar-item">가마골용소</a>					          
+				  </div>
+			  </div>
+			  <div class="navbar-item has-dropdown is-hoverable">
+				  <a href="tourCateListB.html" class="navbar-link cate">
+				  문화예술</a>
+				  <div class="navbar-dropdown cate" id="cate02">
+					   <a href="tourDetailB1.html" class="navbar-item">고하 송진우</a>
+					   <a href="tourDetailB2.html" class="navbar-item">하서 김인후</a>
+					   <a href="tourDetailB3.html" class="navbar-item">서하당 김성원</a>          
+				  </div>
+			  </div>
+			  <div class="navbar-item has-dropdown is-hoverable">
+				  <a href="tourCateListC.html" class="navbar-link cate">
+				  인문학기행</a>
+				  <div class="navbar-dropdown cate" id="cate03">
+					   <a href="tourDetailC1.html" class="navbar-item">담양별빛달빛야행</a>
+					   <a href="tourDetailC2.html" class="navbar-item">담양에서 일주일여행하기</a>					   
+				  </div>
+			  </div>
+			  <div  class="navbar-item has-dropdown is-hoverable">
+				  <a href="tourCateListD.html" class="navbar-link cate">
+				  담양의 축제</a>
+				  <div class="navbar-dropdown cate" id="cate04">
+					   <a href="tourDetailD1.html" class="navbar-item">용면추월산 벚꽃축제</a>
+					   <a href="tourDetailD2.html" class="navbar-item">담양대나무축제</a>
+					   <a href="tourDetailD3.html" class="navbar-item">고서포도축제</a>						         
+				  </div>
+			  </div>
+			  <div  class="navbar-item has-dropdown is-hoverable">
+				  <a href="tourCateListE.html" class="navbar-link cate">
+				  담양의 음식</a>
+				  <div class="navbar-dropdown cate" id="cate05">
+					   <a href="tourDetailE1.html" class="navbar-item">한우 떡갈비</a>
+					   <a href="tourDetailE2.html" class="navbar-item">대통밥</a>
+					   <a href="tourDetailE3.html" class="navbar-item">담양국수</a>							          
+				  </div>
+			  </div>			
+			  <div class="navbar-item has-dropdown is-hoverable">
+				  <a href="tourCateListF.html" class="navbar-link cate">
+				  담양의 숙소</a>
+				  <div class="navbar-dropdown cate" id="cate06">
+					   <a href="tourDetailF1.html" class="navbar-item">힐링민박</a>
+					   <a href="tourDetailF2.html" class="navbar-item">휴가림</a>
+					   <a href="tourDetailF3.html" class="navbar-item">행복나드리 민박</a>          
+				  </div>
+			  </div> 			
+			  <div class="navbar-item has-dropdown is-hoverable single">
+				  <a class="navbar-link">고객센터</a>
+				  <div class="navbar-dropdown single">
+					   <a class="navbar-item" href="notice.html">공지사항</a>
+					   <a class="navbar-item" href="QNA.html">묻고 답하기</a>
+					   <a class="navbar-item" href="impress.html">이용후기</a>				        
+				  </div>
+			  </div>		  
+			<div class="navbar-end" id="tnb">
+			  <div class="navbar-item">		    	
+					<div class="buttons">
+					  <a class="button is-primary" href="signUp.html">
+						<strong>회원가입</strong>
+					  </a>
+					  <a class="button is-focused" href="login.html">
+						   로그인
+					  </a>
+					</div>		  		
+			  </div>
+			</div>
+		  </div>
+		  </nav>
+		<script>
+		$(document).ready(function(){
+			$.ajax({
+				url:"/pro03/MenuLoadCtrl.do",
+				type:"POST",
+				enctype:"UTF-8",
+				datatype:"json",
+				processData:false,
+				contentType:false,
+				cache:false,
+				success:function(data){
+					$(".navber-dropdown.cate").empty();
+					var trans = $.parseJSON(data);
+					$.each(trans, function(key, value){
+						if(key=="data"){
+							for(var i=0;i<value.length;i++){
+								if(value[i].cate=="A"){
+									$("#cate01").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
+								} else if(value[i].cate=="B"){
+									$("#cate02").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
+								} else if(value[i].cate=="C"){
+									$("#cate03").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
+								} else if(value[i].cate=="D"){
+									$("#cate04").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
+								} else if(value[i].cate=="E"){
+									$("#cate05").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
+								} else if(value[i].cate=="F"){
+									$("#cate06").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
+								} 
+							}
+						}
+					})
+				}
+			});
+		})
+		</script>
+	</div>
+</div>	
+<nav class="breadcrumb" aria-label="breadcrumbs" style="border-bottom:2px solid #ddd; padding-bottom:8px; min-height:48px; line-height:48px;">
+	<ul style="float:right;">
+		<li><a href="index.html">Home</a></li>
+		<li><a href="tourCateListC.html"><span>인문학기행</span></a>
+	</ul>
+</nav>
+ <section class="section">
+	<div class="container">
+      <h1 class="title"><span>인문학기행</span>목록</h1>
+	  	<div id="con">
+	  		<div class="tile is-ancestor columns" style="padding-bottom:40px;">				
+	    			<div class="tile is-3" style="box-sizing:border-box;">
+	      				<article class="tile is-child is-one-third notification" style="background-color:transparent; border:1px solid #eee; margin-right:10px!important;">
+					        <p class="title">담양별빛ㆍ달빛야행(夜行)</p>
+					        <p class="subtitle"><span>인문학기행</span></p>
+	        				<figure class="image is-4by3">
+					        	<img src="data/담양야행.jpg" alt="담양별빛ㆍ달빛야행(夜行)">
+					        </figure>
+					        <div class="content" style="margin:10px;">
+					        	<p class="item_com">행 사 명 : 담양 별빛·달빛야행(夜行)
+행사일시 : 코로나19 확산세로 인한 행사 잠정 중단
+진행시간 : 19:00 ~ 21:00(2시간)
+대 상 : 군민, 관광객 누구나
+참가인원 : 회당 30명 내외(선착순)
+프로그램 내용
+- 해질녘, 죽녹원 대숲 속에서 명사와 함께하는 인문학 강좌
+- 별빛·달빛따라 이야기가 있는 해설과 함께 죽녹원 등 힐링 산책
+- 버스킹 음악공연
+운영코스
+죽녹원 정문 집결(18:50~19:00)  봉황루전망대  대숲산책길  인문학 강좌(19:15~19:30)  죽녹원 정문 이동  플라타너스길 별빛·달빛감상  공연(20:00~21:00)
+주차안내 : 담양군 담양읍 객사7길 15(관방제림 입구)
+- 주차장에서 죽녹원 정문 가는 길 : 관방제림 입구에서 도보 2~3분 거리 위치(향교다리 건너편)
+참가비용 : 5,000원
+- 입금계좌 : 351-1044-9163-13(농협은행, 담양군해설사협회)
+- 소정의 기념품 제공
+신청접수(입금) 마감일
+- 행사일 이틀전(목요일</p>
+					        </div>
+					        <a href="tourDetailC1.html" class="button is-primary">자세히 보기</a>
+	      				</article>
+	    			</div>
+				
+	    			<div class="tile is-3" style="box-sizing:border-box;">
+	      				<article class="tile is-child is-one-third notification" style="background-color:transparent; border:1px solid #eee; margin-right:10px!important;">
+					        <p class="title">담양에서 일주일여행하기</p>
+					        <p class="subtitle"><span>인문학기행</span></p>
+	        				<figure class="image is-4by3">
+					        	<img src="data/담양에서일주일.jpg" alt="담양에서 일주일여행하기">
+					        </figure>
+					        <div class="content" style="margin:10px;">
+					        	<p class="item_com">기 간 : 2022. 7. ~ 12.
+※ 코로나19에 따라 사업이 조기종료될 수 있으며 종료기간 이후의 신청은 자동 취소됩니다.
+대 상
+- 현재 전남·광주 거주자 제외한 전남 여행 희망자
+- 숨은 관광명소 사진촬영 동영상 , SNS 촬영제작 등 에 담양 관광홍보가 가능한 사람
+선정인원 : 15명 내외(1팀당 4명이하)
+여행기간 : 일주일(6박 7일)
+- 여행기간 중 참여자 전원 여행자보험 가입 필수 (여행자보험료1인 2만원 이내 실비 지원)
+*선정 인원은 상황에 따라 조정될 수 있으며, 6박 7일 이후의 여행에 대해서는 지원불가</p>
+					        </div>
+					        <a href="tourDetailC2.html" class="button is-primary">자세히 보기</a>
+	      				</article>
+	    			</div>
+			</div>
+	    </div>
+	</div>
+</section>
+
+<footer class="footer">
+	<div class="content has-text-centered">
+		<div class="ft_logo"><img src="./data/footer_logo.gif" alt="하단로고"></div>
+		<div class="ft_content">
+			<div class="select">
+				<select name="sel" id="sel" class="sel" onchange="sel_link(this)">
+					<option value="">부서별안내</option>
+					<option value="">기획예산실</option>
+					<option value="">행정과</option>
+				</select>
+			</div>
+			<div class="select">	
+				<select name="sel" id="sel" class="sel" onchange="sel_link(this)">
+					<option value="">읍면 홈페이지</option>
+					<option value="">담양읍</option>
+					<option value="">봉산면</option>
+				</select>
+			</div>
+			<div class="select">	
+				<select name="sel" id="sel" class="sel" onchange="sel_link(this)">
+					<option value="">관련사이트</option>
+					<option value="">담양군의회</option>
+					<option value="">문화관광</option>
+				</select>
+			</div>
+			<div class="select">	
+				<select name="sel" id="sel" class="sel" onchange="sel_link(this)">
+					<option value="">유관기관</option>
+					<option value="">담양경찰서</option>            
+				</select>
+			</div>  
+			<div class="mid_box">
+				<nav class="fnb">
+				<a href="" class="dpc">저작권보호정책</a>
+				<a href="" class="dpc">개인정보처리방침</a>
+				<a href="" class="dpc">이메일무단수집거부</a>
+				</nav>
+				<p class="addr">(57339)전라남도 담양군 담양읍 추성로 1371 / 대표전화 061-380-3114</p>
+				<p class="copyright">Copyright by Damyang-Gun. All Right Reserved.</p>
+			</div>   
+		</div>
+	</div>
+	<script>
+	function sel_link(sel) {
+		location.href = sel.value;
+	}
+	</script>
+</footer>
+</body>
+</html>

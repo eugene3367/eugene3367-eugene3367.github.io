@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>공지사항 글 등록</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  </head>
+<body>
+<div id="nav-group">
+	<div class="container">
+		<nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+              <a class="navbar-item" id="logo2" href="index.html">
+              <img alt="상단로고" src="./data/logo.png"></a>
+          
+              <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+            </div>		  
+            
+            <div id="navbarBasicExample" class="navbar-menu">
+              <div class="navbar-start" id="gnb">
+              
+              <div class="navbar-item has-dropdown is-hoverable">
+                  <a href="tourCateListA.html" class="navbar-link">
+                  관광명소</a>
+                  <div class="navbar-dropdown cate" id="cate01">
+                       <a href="tourDetailA1.html" class="navbar-item">용흥사계곡</a>
+                       <a href="tourDetailA2.html" class="navbar-item">관방제림</a>
+                       <a href="tourDetailA3.html" class="navbar-item">가마골용소</a>					          
+                  </div>
+              </div>
+              <div class="navbar-item has-dropdown is-hoverable">
+                  <a href="tourCateListB.html" class="navbar-link cate">
+                  문화예술</a>
+                  <div class="navbar-dropdown cate" id="cate02">
+                       <a href="tourDetailB1.html" class="navbar-item">고하 송진우</a>
+                       <a href="tourDetailB2.html" class="navbar-item">하서 김인후</a>
+                       <a href="tourDetailB3.html" class="navbar-item">서하당 김성원</a>          
+                  </div>
+              </div>
+              <div class="navbar-item has-dropdown is-hoverable">
+                  <a href="tourCateListC.html" class="navbar-link cate">
+                  인문학기행</a>
+                  <div class="navbar-dropdown cate" id="cate03">
+                       <a href="tourDetailC1.html" class="navbar-item">담양별빛달빛야행</a>
+                       <a href="tourDetailC2.html" class="navbar-item">담양에서 일주일여행하기</a>					   
+                  </div>
+              </div>
+              <div  class="navbar-item has-dropdown is-hoverable">
+                  <a href="tourCateListD.html" class="navbar-link cate">
+                  담양의 축제</a>
+                  <div class="navbar-dropdown cate" id="cate04">
+                       <a href="tourDetailD1.html" class="navbar-item">용면추월산 벚꽃축제</a>
+                       <a href="tourDetailD2.html" class="navbar-item">담양대나무축제</a>
+                       <a href="tourDetailD3.html" class="navbar-item">고서포도축제</a>						         
+                  </div>
+              </div>
+              <div  class="navbar-item has-dropdown is-hoverable">
+                  <a href="tourCateListE.html" class="navbar-link cate">
+                  담양의 음식</a>
+                  <div class="navbar-dropdown cate" id="cate05">
+                       <a href="tourDetailE1.html" class="navbar-item">한우 떡갈비</a>
+                       <a href="tourDetailE2.html" class="navbar-item">대통밥</a>
+                       <a href="tourDetailE3.html" class="navbar-item">담양국수</a>							          
+                  </div>
+              </div>			
+              <div class="navbar-item has-dropdown is-hoverable">
+                  <a href="tourCateListF.html" class="navbar-link cate">
+                  담양의 숙소</a>
+                  <div class="navbar-dropdown cate" id="cate06">
+                       <a href="tourDetailF1.html" class="navbar-item">힐링민박</a>
+                       <a href="tourDetailF2.html" class="navbar-item">휴가림</a>
+                       <a href="tourDetailF3.html" class="navbar-item">행복나드리 민박</a>          
+                  </div>
+              </div> 			
+              <div class="navbar-item has-dropdown is-hoverable single">
+                  <a class="navbar-link">고객센터</a>
+                  <div class="navbar-dropdown single">
+                       <a class="navbar-item" href="notice.html">공지사항</a>
+                       <a class="navbar-item" href="QNA.html">묻고 답하기</a>
+                       <a class="navbar-item" href="impress.html">이용후기</a>				        
+                  </div>
+              </div>		  
+            <div class="navbar-end" id="tnb">
+              <div class="navbar-item">		    	
+                    <div class="buttons">
+                      <a class="button is-primary" href="signUp.html">
+                        <strong>회원가입</strong>
+                      </a>
+                      <a class="button is-focused" href="login.html">
+                           로그인
+                      </a>
+                    </div>		  		
+              </div>
+            </div>
+          </div>
+          </nav>
+		<script>
+		$(document).ready(function(){
+			$.ajax({
+				url:"/pro03/MenuLoadCtrl.do",
+				type:"POST",
+				enctype:"UTF-8",
+				datatype:"json",
+				processData:false,
+				contentType:false,
+				cache:false,
+				success:function(data){
+					$(".navber-dropdown.cate").empty();
+					var trans = $.parseJSON(data);
+					$.each(trans, function(key, value){
+						if(key=="data"){
+							for(var i=0;i<value.length;i++){
+								if(value[i].cate=="A"){
+									$("#cate01").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
+								} else if(value[i].cate=="B"){
+									$("#cate02").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
+								} else if(value[i].cate=="C"){
+									$("#cate03").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
+								} else if(value[i].cate=="D"){
+									$("#cate04").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
+								} else if(value[i].cate=="E"){
+									$("#cate05").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
+								} else if(value[i].cate=="F"){
+									$("#cate06").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
+								} 
+							}
+						}
+					})
+				}
+			});
+		})
+		</script>
+	</div>
+</div>	
+  <section class="section">
+    <div class="container">
+      <h1 class="title">글 등록하기</h1>
+      	<form action="" method="post">
+			<table class="table">
+			   <tbody>
+			    <tr>
+			      <th><label for="title">제목</label></th>
+			      <td><input type="text" class="input" maxlength="120" name="title" id="title" placeholder="제목 입력" required /></td>
+			    </tr>
+			    <tr>
+			      <th><label for="content">내용</label></th>
+			      <td><textarea rows="8" cols="100" name="content" id="content" class="textarea" required></textarea></td>
+			    </tr>
+			  </tbody>
+			</table>
+			<div class="buttons">
+			  <button type="submit" class="button is-focused">등록</button>
+			  <button type="reset" class="button is-focused">취소</button>
+			  <a href="notice.html" class="button is-info">목록</a>
+			</div>
+		</form>
+    </div>
+  </section>
+
+<footer class="footer">
+	<div class="content has-text-centered">
+		<div class="ft_logo"><img src="./data/footer_logo.gif" alt="하단로고"></div>
+		<div class="ft_content">
+			<div class="select">
+				<select name="sel" id="sel" class="sel" onchange="sel_link(this)">
+					<option value="">부서별안내</option>
+					<option value="">기획예산실</option>
+					<option value="">행정과</option>
+				</select>
+			</div>
+			<div class="select">	
+				<select name="sel" id="sel" class="sel" onchange="sel_link(this)">
+					<option value="">읍면 홈페이지</option>
+					<option value="">담양읍</option>
+					<option value="">봉산면</option>
+				</select>
+			</div>
+			<div class="select">	
+				<select name="sel" id="sel" class="sel" onchange="sel_link(this)">
+					<option value="">관련사이트</option>
+					<option value="">담양군의회</option>
+					<option value="">문화관광</option>
+				</select>
+			</div>
+			<div class="select">	
+				<select name="sel" id="sel" class="sel" onchange="sel_link(this)">
+					<option value="">유관기관</option>
+					<option value="">담양경찰서</option>            
+				</select>
+			</div>  
+			<div class="mid_box">
+				<nav class="fnb">
+				<a href="" class="dpc">저작권보호정책</a>
+				<a href="" class="dpc">개인정보처리방침</a>
+				<a href="" class="dpc">이메일무단수집거부</a>
+				</nav>
+				<p class="addr">(57339)전라남도 담양군 담양읍 추성로 1371 / 대표전화 061-380-3114</p>
+				<p class="copyright">Copyright by Damyang-Gun. All Right Reserved.</p>
+			</div>   
+		</div>
+	</div>
+	<script>
+	function sel_link(sel) {
+		location.href = sel.value;
+	}
+	</script>
+</footer>
+  </body>
+</html>
