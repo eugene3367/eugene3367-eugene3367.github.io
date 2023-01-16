@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>유진의 웹 애플리케이션 포트폴리오</title>
+    <!-- 메타포 선언 -->
+    <!-- 파비콘 -->
+    <!-- 오픈그래프 -->
+    <!-- 필수 플러그인 -->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+    <!-- 패럴렉스 스크롤링 플러그인 -->
+    <style>
+        * { margin: 0; padding: 0;}
+        body, html { width: 100%; overflow-x: hidden; }
+        /* 스크롤바 보이지 않게 - Chrome, Safari, Opera */
+        ::-webkit-scrollbar { display: none; }
+        body, html { -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none; } /* firefox */
+        
+
+        .parallax-window { min-height: 400px; background: transparent; }
+    </style>
+    <script>
+        $('.parallax-window').parallax({imageSrc: '/path/to/image.jpg'});
+        $('.parallax-window').parallax({
+    naturalWidth: 600,
+    naturalHeight: 400
+  });
+    </script>
+</head>
+<body>
+    <div class="parallax-window" data-parallax="scroll" data-image-src="/path/to/image.jpg">
+        <img src="workspace.jpg" alt="">
+    </div>
+    <div class="parallax-window">
+        <div class="parallax-slider">
+          <span style="position:absolute; top: 400px; left: 400px;">INTRO</span>
+          <p>Some other Content</p>
+        </div>
+    </div>  
+    <div class="parallax-window">
+        <div class="parallax-slider">
+          <img src="workspace.jpg" srcset="workspace.jpg 400w, workspace.jpg 800w, workspace.jpg 1200w" sizes="100vw">
+        </div>
+    </div>      
+</body>
+</html>

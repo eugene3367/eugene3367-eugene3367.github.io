@@ -1,0 +1,238 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>제품 상세보기</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="../css/reset.css">
+
+<!DOCTYPE html>
+
+<style>   
+	body { background-color: #fff9ef; }
+ 	p { margin-bottom: 0rem; }
+ 	a { color: black; }
+	.ban { width: 100%; height:40px; background-color: #222; text-align: center; padding-top: 5px; padding-bottom: 5px;}	
+	.nav-link.top { color: white; font-size: 11px; }
+	#logo { float: left;}
+    .navbar-nav.mr-auto { font-weight:600; padding-left: 320px; }
+    
+    .content { clear:both; width: 100%; min-height: 510px; } 
+    .visual { clear:both; width: 100%; }
+    .visual img { display:block; width: 100%; height:auto; overflow: hidden;}
+    
+    .page_top {display:block; clear:both; width: 1700px; margin: 0 auto; padding-top: 30px;}
+    .sale-text { color:#909090; text-decoration:line-through; }
+    .main-media { margin:0 auto; }
+    .media-text { width: 400px; margin: 0 auto; padding: 34px;}
+    
+	.title { padding-top:36px; padding-bottom:20px; }
+	#content_row { min-height: 510px; }    
+	#cusPw { width:780px; float:left; margin-right:30px; margin-left:6px; }
+	
+	ul { list-style:none; }
+	#prolist-content { width:1600px; }
+    
+    #brand-media { width: 1000px; margin: 0 auto; }
+    #brand-media .mr-3 { width: 450px; }
+    .media-body { white-space: pre-wrap; padding-left: 75px; font-size: 14px; font-weight: 600; padding-top: 20px; }
+    
+    #event-media { width: 1300px; margin: 0 auto; }
+    #event-media .mr-3 { width: 900px; }    
+    
+    .agree_fr { width: 900px; white-space: pre-wrap; margin: 10px auto; padding: 24px; border: 2px solid #eee; height: 600px; overflow-y: auto; margin-bottom: 50px;}
+    
+    .in_container {clear: both; width: 1600px; height: 65px; margin: 0 auto; padding-top: 12px;}
+	.in_container:after, .in_container:before { content:""; display:block; clear:both; }
+	.nav.flex-column { float:left; }
+	#flex-column { padding-left: 85px; }
+	.nav.flex-column h5 { padding-left: 15px; }
+	#row3 p { font-size: 11px; padding-top: 12px; padding-bottom: 12px; }
+	
+
+</style>
+   
+<style>
+.title { padding-top:36px; padding-bottom:20px; }
+.table tr td { max-width:400px; }
+.table tr td img { max-width:400px; height:auto; }
+</style>
+</head>
+<body>
+
+    
+
+
+	<p class="ban"><strong><a class="nav-link top" href="event.html">첫 구매시 젤램프 0원</a></strong></p>
+	<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fff9ef;">
+		<div class="in_container"> 
+		  <a class="navbar-brand" id="logo" href="index.html"><img alt="logo" src="img/logo.svg"> </a>
+		  
+		  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+			<ul class="navbar-nav mr-auto">          
+			  <li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="nail&pedi.html" role="button" data-toggle="dropdown" aria-expanded="false">
+				  GEL NAIL&PEDI
+				</a>
+				<div class="dropdown-menu">
+				  <a class="dropdown-item" href="gel1.html">젤 네일</a>
+				  <a class="dropdown-item" href="gel2.html">젤 페디</a>
+				  <a class="dropdown-item" href="gel3.html">아이싱</a>          
+				</div>        
+			  </li>
+			  <li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="nail polish.html" role="button" data-toggle="dropdown" aria-expanded="false">
+				  NAIL POLISH
+				</a>
+				<div class="dropdown-menu">
+				  <a class="dropdown-item" href="nail1.html">풀 컬러</a>
+				  <a class="dropdown-item" href="nail2.html">스파클링</a>                    
+				</div>        
+			  </li>
+			  <li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="nail polish.html" role="button" data-toggle="dropdown" aria-expanded="false">
+				  CARE
+				</a>
+				<div class="dropdown-menu">
+				  <a class="dropdown-item" href="care1.html">네일케어</a>
+				  <a class="dropdown-item" href="care2.html">네일툴</a>                    
+				</div>        
+			  </li>  
+			  <li class="nav-item">
+				<a class="nav-link" href="brand.html">BRAND</a>
+			  </li>                           
+			  <li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+				  SERVICES
+				</a>
+				<div class="dropdown-menu">
+				  <a class="dropdown-item" href="boardList.html">NOTICE</a>
+				  <a class="dropdown-item" href="qnaList.html">Q&A</a>                    
+				</div>        
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="event.html">EVENT</a>
+			  </li>     
+			</ul>        
+			<ul class="nav justify-content-end">
+			  
+				  <li class="nav-item">
+					<span class="nav-link">고유c님</span>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link active" href="index.html">로그아웃</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="customInfo.html">회원정보</a>
+				  </li>
+				  
+				  <li class="nav-item">
+					<a class="nav-link" href="sale.html">구매내역</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="cart.html">장바구니</a>
+				  </li>
+				  
+			  
+			</ul>
+		  </div>
+		 </div>
+	</nav>
+
+<div class="container-fluid" id="content">
+	<div class="row" id="content_row">
+		
+		
+		<main class="content container">
+		
+			<h2 class="title">제품 상세보기</h2>
+			<table class="table">
+				<tbody>
+					<tr>
+						<th>제품이미지</th>
+						<td><img src="upload/nailcare1-1.jpg" alt="어카이즈 루즈스킨 리무버 세트"></td>
+					</tr>
+					<tr>
+						<th>제품번호</th>
+						<td>44</td>
+					</tr>
+					<tr>
+						<th>카테고리 번호</th>
+						<td>6</td>
+					</tr>
+					<tr>
+						<th>제품명</th>
+						<td>어카이즈 루즈스킨 리무버 세트</td>
+					</tr>
+					<tr>
+						<th>제품 설명</th>
+						<td>어카이즈 루즈스킨 리무버 세트</td>
+					</tr>
+					<tr>
+						<th>제품가격</th>
+						<td>
+							판매가격 : <strong style="color:red">13500</strong> <br>
+							세일전 가격 : (<del>15000</del>) 
+						</td>
+					</tr>
+					<tr>
+						<th>남은 수량</th>
+						<td>
+						
+						<strong style="color:red">[품절]</strong>해당 상품의 재고가 존재하지 않습니다.
+						
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="btn-group">
+				<a href="care1.html" class="btn btn-info">목록으로</a>
+				
+				
+			</div>
+		</main>
+	</div>
+</div>
+
+    
+<hr>    
+<footer class="container-fluid" id="footer">
+	<div class="in_container">		
+		<div class="row">
+			<nav class="fnb">
+				<nav class="nav flex-column">
+				  <h5>BRAND</h5>
+				  <a class="nav-link active" href="brand.html">어바웃</a>
+				  <p>&nbsp;&nbsp;&nbsp;&nbsp;Shop in: South Korea</p>
+				</nav>		
+				
+				<nav class="nav flex-column" id="flex-column">
+				  <h5>SERVICES</h5>
+				  <a class="nav-link active" href="boardList.html">공지사항</a>
+				  <a class="nav-link" href="qnaList.html">Q&A</a>
+				  <a class="nav-link" href="membership.html">이용약관</a>
+				
+				</nav>		
+				
+				<nav class="nav flex-column" id="flex-column">
+				  <h5>FOLLOW US</h5>
+				  <a class="nav-link" href="https://www.instagram.com/kouve.official/"><img src="img/instagram.svg"> 인스타그램</a>
+				</nav>
+        	</nav>
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12" id="row3">
+				<img id="footerlogo" alt="logo" src="img/logo.svg" width=100%>
+				<p id="footercontent">(주)웨이비블룸 | 대표자명: 이상빈 | 사업자번호: 274-86-02127 | 통신판매신고번호: 제2022-서울강남-00928호 | 이메일: kouve@wavybloom.com | 개인정보보호책임자: 고기범 | 주소: 서울특별시 강남구 논현로 644, 3층, 301호(논현동, 대용빌딩) | 대표번호: 1600-3986 | 입금계좌: 중소기업은행 065-154035-01-028<br>
+				Copyright © kouve All Rights Reserved</p>
+			</div>		
+		</div>
+	</div>
+</footer>
+
+</body>
+</html>
